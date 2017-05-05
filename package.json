@@ -1,0 +1,37 @@
+{
+  "name": "semgrex",
+  "version": "1.0.0",
+  "description": "NodeJs wrapper for Stanford NLP Semgrex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koorchik/node-semgrex.git"
+  },
+  "keywords": [
+    "NLP",
+    "Semgrex",
+    "Natural",
+    "Language",
+    "Processing",
+    "Dependency",
+    "tree",
+    "Java",
+    "JNI"
+  ],
+  "author": "Viktor Turskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koorchik/node-semgrex/issues"
+  },
+  "homepage": "https://github.com/koorchik/node-semgrex#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "java": "^0.8.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.3.0"
+  }
+}
