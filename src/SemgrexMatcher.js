@@ -12,6 +12,7 @@ java.classpath.push(__dirname + "/../javalib/stanford-corenlp-3.7.0.jar");
 const CoNLLUDocumentReader = java.import('edu.stanford.nlp.trees.ud.CoNLLUDocumentReader');
 const SemgrexPattern       = java.import('edu.stanford.nlp.semgraph.semgrex.SemgrexPattern');
 const SemanticGraph        = java.import('edu.stanford.nlp.semgraph.SemanticGraph');
+const CoreLabel            = java.import('edu.stanford.nlp.ling.CoreLabel');
 const StringReader         = java.import('java.io.StringReader');
 
 class SemgrexMatcher {
@@ -43,7 +44,7 @@ class SemgrexMatcher {
     async getMatch() {
         const matcher = await this._getMatcher();
 
-        const node = await matcher.getMatch();;
+        const node = await matcher.getMatch();
         if (!node) return;
 
         return this.nodesById[await node.index()];
@@ -60,28 +61,12 @@ class SemgrexMatcher {
 
     async getNodeNames() {
         const matcher    = await this._getMatcher();
-        const setOfNames = await matcher.getNodeNames();
-        const iterator   = await setOfNames.iterator();
-
-        const names = [];
-        while ( await iterator.hasNext() ) {
-            names.push( await iterator.next() );
-        }
-
-        return names;
+        return this._setToArray( await matcher.getNodeNames() );
     }
 
     async getRelationNames() {
         const matcher    = await this._getMatcher();
-        const setOfNames = await matcher.getRelationNames();
-        const iterator   = await setOfNames.iterator();
-
-        const names = [];
-        while ( await iterator.hasNext() ) {
-            names.push( await iterator.next() );
-        }
-
-        return names;
+        return this._setToArray( await matcher.getRelationNames() );
     }
 
     async getRelnString(name) {
@@ -126,11 +111,11 @@ class SemgrexMatcher {
         let CoNLL = '';
 
         nodes.forEach( node => {
-            const id      = node.id;
-            const form    = node.form;
-            const lemma   = node.lemma   || '_';
+            const id      = node.id; // idx
+            const form    = node.form; // word
+            const lemma   = node.lemma   || '_'; // lemma
             const upostag = node.upostag || '_';
-            const xpostag = node.xpostag || '_';
+            const xpostag = node.upostag || '_'; // tag // We copy xpostag to xpostag to have access to it using "tag"
             const feats   = node.feats   || '_';
             const head    = node.head;
             const deprel  = (node.deprel || '_').toLowerCase();
@@ -143,6 +128,17 @@ class SemgrexMatcher {
         });
 
         return CoNLL;
+    }
+
+    async _setToArray(set) {
+        const iterator = await set.iterator();
+
+        const items = [];
+        while ( await iterator.hasNext() ) {
+            items.push( await iterator.next() );
+        }
+
+        return items;
     }
 }
 
