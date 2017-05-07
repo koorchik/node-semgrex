@@ -116,7 +116,7 @@ class SemgrexMatcher {
             const lemma   = node.lemma   || '_'; // lemma
             const upostag = node.upostag || '_';
             const xpostag = node.upostag || '_'; // tag // We copy xpostag to xpostag to have access to it using "tag"
-            const feats   = node.feats   || '_';
+            const feats   = '_'; //TODO
             const head    = node.head;
             const deprel  = (node.deprel || '_').toLowerCase();
             const deps    = node.deps    || '_';
