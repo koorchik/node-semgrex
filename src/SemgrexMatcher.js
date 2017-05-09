@@ -16,7 +16,9 @@ const CoreLabel            = java.import('edu.stanford.nlp.ling.CoreLabel');
 const StringReader         = java.import('java.io.StringReader');
 
 class SemgrexMatcher {
-    constructor({ nodes=[], pattern='{}' } = {}) {
+    constructor({ nodes=[], pattern } = {}) {
+        if (!pattern) throw new Error('"pattern" required');
+
         this.pattern = pattern;
         this.matcher = null;
 
