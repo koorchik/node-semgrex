@@ -20,6 +20,24 @@ This modules fully supports "Semgrex Matcher API".
 
 You should use syntax parser for your language. You can start with https://cloud.google.com/natural-language/ for parsing sentences.
 
+## Syntax details
+
+1. Use 'idx' field to match node by 'id'.
+2. Use 'tag' field to match node by 'upostag'.
+3. Use 'word' field to match node by 'form'.
+4. Use 'lemma' field to match node by 'lemma'.
+
+```javascript
+const matcher = new SemgrexMatcher({
+  nodes,
+  pattern: '{tag:NOUN} <<rcmod {lemma:do}'
+});
+```
+
+## Complex example
+
+For more examples see ["examples" foler](./examples)
+
 ```javascript
 
 const { SemgrexMatcher } = require('semgrex');

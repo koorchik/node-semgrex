@@ -1,2 +1,2 @@
-const SemgrexMatcher = require('./src/SemgrexMatcher');
+const SemgrexMatcher = require('./build/SemgrexMatcher');
 module.exports = {SemgrexMatcher};
