@@ -1,18 +1,5 @@
-semgrex
--------
 
-https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/semgraph/semgrex/SemgrexPattern.html
-https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/semgraph/semgrex/SemgrexMatcher.html
-
-A SemgrexPattern is a tgrep-type pattern for matching node configurations in one of the Dependency trees structures. Unlike tgrep but like Unix grep, there is no pre-indexing of the data to be searched. Rather there is a linear scan through the graph where matches are sought.
-
-A SemgrexPattern is a tgrep-type pattern for matching node configurations in one of the SemanticGraph structures. Unlike tgrep but like Unix grep, there is no pre-indexing of the data to be searched. Rather there is a linear scan through the graph where matches are sought.
-
-You can use https://cloud.google.com/natural-language/ for parsing sentences.
-
-```javascript
-
-const { SemgrexMatcher } = require('semgrex');
+const { SemgrexMatcher } = require('../');
 
 // "Kiev, which is one of the largest cities in Europe, is the capital of Ukraine." as a dependency tree nodes
 
@@ -59,5 +46,3 @@ async function main() {
       console.log( 'REL STRING', await matcher.getRelnString('rel') );
   }
 }
-
-```
