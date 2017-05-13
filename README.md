@@ -1,14 +1,24 @@
-semgrex
--------
+NodeJs wrapper for Stanford NLP Semgrex
+---------------------------------------
 
-https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/semgraph/semgrex/SemgrexPattern.html
-https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/semgraph/semgrex/SemgrexMatcher.html
+## What is Semgrex?
 
-A SemgrexPattern is a tgrep-type pattern for matching node configurations in one of the Dependency trees structures. Unlike tgrep but like Unix grep, there is no pre-indexing of the data to be searched. Rather there is a linear scan through the graph where matches are sought.
+Semgrex is a utility for matching patterns in dependency trees, based on tree relationships and regular expression matches on nodes.
 
-A SemgrexPattern is a tgrep-type pattern for matching node configurations in one of the SemanticGraph structures. Unlike tgrep but like Unix grep, there is no pre-indexing of the data to be searched. Rather there is a linear scan through the graph where matches are sought.
+Semgrex is part of StafordNLP which is written in Java. So, this module uses Java Native Interface(JNI). You will need JRE to run this module.
 
-You can use https://cloud.google.com/natural-language/ for parsing sentences.
+## Documentation
+
+Module documentation
+* [Semgrex Syntax](https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/semgraph/semgrex/SemgrexPattern.html)
+* [Semgrex Matcher API](https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/semgraph/semgrex/SemgrexMatcher.html)
+* [Powerpoint Slides](https://nlp.stanford.edu/software/Semgrex.ppt)
+
+This modules fully supports "Semgrex Matcher API".
+
+## How to convert sentence to Dependecy Tree?
+
+You should use syntax parser for your language. You can start with https://cloud.google.com/natural-language/ for parsing sentences.
 
 ```javascript
 
