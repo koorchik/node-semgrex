@@ -7,14 +7,14 @@ Semgrex is a utility for matching patterns in dependency trees, based on tree re
 
 Semgrex is part of StafordNLP which is written in Java. So, this module uses Java Native Interface(JNI). You will need JRE to run this module.
 
+This modules fully supports "Semgrex Matcher API".
+
 ## Documentation
 
-Module documentation
 * [Semgrex Syntax](https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/semgraph/semgrex/SemgrexPattern.html)
 * [Semgrex Matcher API](https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/semgraph/semgrex/SemgrexMatcher.html)
 * [Powerpoint Slides](https://nlp.stanford.edu/software/Semgrex.ppt)
 
-This modules fully supports "Semgrex Matcher API".
 
 ## How to convert sentence to Dependecy Tree?
 
