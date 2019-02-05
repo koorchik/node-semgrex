@@ -11,8 +11,6 @@ java.classpath.push(__dirname + "/../javalib/stanford-corenlp-3.7.0.jar");
 
 const CoNLLUDocumentReader = java.import('edu.stanford.nlp.trees.ud.CoNLLUDocumentReader');
 const SemgrexPattern       = java.import('edu.stanford.nlp.semgraph.semgrex.SemgrexPattern');
-const SemanticGraph        = java.import('edu.stanford.nlp.semgraph.SemanticGraph');
-const CoreLabel            = java.import('edu.stanford.nlp.ling.CoreLabel');
 const StringReader         = java.import('java.io.StringReader');
 
 class SemgrexMatcher {
