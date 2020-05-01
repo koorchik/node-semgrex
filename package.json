@@ -1,37 +1,41 @@
 {
-    "name": "semgrex",
-    "version": "2.0.0",
-    "description": "NodeJs wrapper for Stanford NLP Semgrex",
-    "main": "index.js",
-    "scripts": {
-        "test": "node tests/semgrexExample.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/koorchik/node-semgrex.git"
-    },
-    "keywords": [
-        "NLP",
-        "Semgrex",
-        "Natural",
-        "Language",
-        "Processing",
-        "Dependency",
-        "tree",
-        "Java",
-        "JNI"
-    ],
-    "author": "Viktor Turskyi",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/koorchik/node-semgrex/issues"
-    },
-    "homepage": "https://github.com/koorchik/node-semgrex#readme",
-    "dependencies": {
-        "bluebird": "^3.5.5",
-        "java": "^0.11.1"
-    },
-    "devDependencies": {
-        "@google-cloud/language": "^3.2.4"
-    }
+  "name": "semgrex",
+  "version": "2.0.0",
+  "description": "NodeJs wrapper for Stanford NLP Semgrex",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/semgrexExample.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koorchik/node-semgrex.git"
+  },
+  "keywords": [
+    "NLP",
+    "Semgrex",
+    "Natural",
+    "Language",
+    "Processing",
+    "Dependency",
+    "tree",
+    "Java",
+    "JNI"
+  ],
+  "author": "Viktor Turskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koorchik/node-semgrex/issues"
+  },
+  "homepage": "https://github.com/koorchik/node-semgrex#readme",
+  "dependencies": {
+    "bluebird": "^3.5.5",
+    "java": "^0.11.1",
+    "snyk": "^1.316.1"
+  },
+  "devDependencies": {
+    "@google-cloud/language": "^3.2.4"
+  },
+  "snyk": true
 }
