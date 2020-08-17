@@ -29,7 +29,7 @@
     "homepage": "https://github.com/koorchik/node-semgrex#readme",
     "dependencies": {
         "bluebird": "^3.5.5",
-        "java": "^0.11.1"
+        "java": "^5.0.0"
     },
     "devDependencies": {
         "@google-cloud/language": "^3.2.4"
